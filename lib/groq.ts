@@ -387,7 +387,7 @@ export async function generateProjectPlan(
   idea: string,
   answers: Record<string, string>
 ): Promise<ProjectResult> {
-  const res = await fetch("http://localhost:3000/api/groq", {
+  const res = await fetch("https://projenius-virid.vercel.app/api/groq", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -414,7 +414,7 @@ export async function refineProjectPlan(
   currentResult: ProjectResult,
   feedback: string
 ): Promise<ProjectResult> {
-  const res = await fetch("http://localhost:3000/api/groq", {
+  const res = await fetch("https://projenius-virid.vercel.app/api/groq", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -443,7 +443,7 @@ export async function generateNextQuestion(
 ): Promise<string> {
   // console.log("In goq.ts");
   // console.log(answers);
-  const res = await fetch("http://localhost:3000/api/groq", {
+  const res = await fetch("https://projenius-virid.vercel.app/api/groq", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
