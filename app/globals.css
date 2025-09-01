@@ -80,3 +80,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+@layer base {
+  html, body {
+    min-height: 100%;
+    scroll-behavior: smooth;
+    overscroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Optional: Improve rendering on animations/zoom */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
