@@ -1,0 +1,21 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { Database } from '@/lib/db'
+
+export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+  try {
+    const project = await Database.getProject(params.id)
+    if (!project) {
+      return NextResponse.json({ error: 'Project not found' }, { status: 404 })
+    }
+
+    const result = await Database.getProjectResult(params.id)
+    
+    return NextResponse.json({
+      ...project,
+      result
+    })
+  } catch (error) {
+    console.error('Error fetching project:', error)
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+  }
+}
