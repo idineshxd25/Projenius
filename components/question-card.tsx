@@ -86,10 +86,10 @@ export function QuestionCard({
                   </div>
 
                   <div className="flex space-x-3">
-                    <Button variant="ghost" onClick={onSkip}>
+{/*                     <Button variant="ghost" onClick={onSkip}>
                       <Skip className="h-4 w-4 mr-2" />
                       Skip
-                    </Button>
+                    </Button> */}
                     <Button
                       onClick={() => onNext(answer)}
                       disabled={!answer.trim()}
