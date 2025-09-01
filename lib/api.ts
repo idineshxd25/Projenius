@@ -262,7 +262,7 @@ export async function saveAnswer(
 
 export async function generatePlan(projectId: string): Promise<Result> {
   const token = await getToken();
-  const response = await fetch("http://localhost:3000/api/agent", {
+  const response = await fetch("https://projenius-virid.vercel.app/api/agent", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -285,7 +285,7 @@ export async function refinePlan(
   feedback: string
 ): Promise<Result> {
   const token = await getToken();
-  const response = await fetch("http://localhost:3000/api/agent/refine", {
+  const response = await fetch("https://projenius-virid.vercel.app/api/agent/refine", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
