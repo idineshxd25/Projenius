@@ -362,7 +362,7 @@ export class Database {
     questionIndex: number,
     idea: string,
     answers: Record<string, string>,
-    updatedQuestionSoFar: String[],
+    updatedQuestionSoFar: string[],
     currentResult?: ProjectResult
   ): Promise<string> {
     // 1. Generate next question

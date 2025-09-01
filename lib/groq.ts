@@ -437,7 +437,7 @@ export async function refineProjectPlan(
 export async function generateNextQuestion(
   idea: string,
   answers: Record<string, string>,
-  updatedQuestionSoFar: String[],
+  updatedQuestionSoFar: string[],
   questionIndex: number,
   currentResult?: ProjectResult
 ): Promise<string> {
