@@ -1,12 +1,107 @@
+// import "./globals.css";
+// import type { Metadata } from "next";
+// import { Inter } from "next/font/google";
+// import { ThemeProvider } from "@/components/theme-provider";
+// import { Navbar } from "@/components/navbar";
+// import { Footer } from "@/components/footer";
+
+// import { Toaster } from "@/components/ui/sonner";
+// import { SpeedInsights } from "@vercel/speed-insights/next"
+// const inter = Inter({ subsets: ["latin"] });
+
+// export const metadata: Metadata = {
+//   title:
+//     "Projenius - Smart AI Project Planner | Turn Ideas Into Structured Projects",
+//   description:
+//     "Projenius is an AI-powered project builder that transforms your ideas into structured project plans. Create roadmaps, choose tech stacks, and generate detailed project blueprints with adaptive Q&A and AI insights.",
+//   keywords: [
+//     "AI project builder",
+//     "idea to project tool",
+//     "AI project planner",
+//     "project planning AI",
+//     "AI roadmap generator",
+//     "adaptive Q&A project tool",
+//     "AI startup tool",
+//     "AI-powered roadmap",
+//     "structured project ideas",
+//     "AI project generator",
+//     "tech stack suggestions AI",
+//     "AI product development tool",
+//   ],
+//   icons: {
+//     icon: "/icon.png",
+//   },
+//   openGraph: {
+//     title: "Projenius - Smart AI Project Planner",
+//     description:
+//       "Turn your ideas into structured projects with AI. Generate roadmaps, tech stacks, and actionable plans instantly.",
+//     url: "https://yourdomain.com", // update later
+//     siteName: "Projenius",
+//     images: [
+//       {
+//         url: "/Projenius.png", // create a nice social preview image
+//         width: 1200,
+//         height: 630,
+//         alt: "Projenius - AI Project Planner",
+//       },
+//     ],
+//     type: "website",
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "Projenius - Smart AI Project Planner",
+//     description:
+//       "Turn your ideas into structured projects with AI. Generate roadmaps, tech stacks, and actionable plans instantly.",
+//     images: ["/Projenius.png"],
+//     creator: "@Dinesh_Bankuru", // optional if you have Twitter
+//   },
+// };
+
+// export default function RootLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <html lang="en">
+//       <body className={inter.className}>
+//         {/* <ThemeProvider
+//           attribute="class"
+//           defaultTheme="system"
+//           enableSystem
+//           disableTransitionOnChange
+//         > */}
+//         <Navbar />
+//         {children}
+//         <Footer />
+//         <Toaster />
+//         <SpeedInsights />
+//         {/* </ThemeProvider> */}
+//       </body>
+//     </html>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-
 import { Toaster } from "@/components/ui/sonner";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,11 +130,11 @@ export const metadata: Metadata = {
     title: "Projenius - Smart AI Project Planner",
     description:
       "Turn your ideas into structured projects with AI. Generate roadmaps, tech stacks, and actionable plans instantly.",
-    url: "https://yourdomain.com", // update later
+    url: "https://projenius-virid.vercel.app", // update later
     siteName: "Projenius",
     images: [
       {
-        url: "/Projenius.png", // create a nice social preview image
+        url: "/Projenius.png",
         width: 1200,
         height: 630,
         alt: "Projenius - AI Project Planner",
@@ -53,7 +148,7 @@ export const metadata: Metadata = {
     description:
       "Turn your ideas into structured projects with AI. Generate roadmaps, tech stacks, and actionable plans instantly.",
     images: ["/Projenius.png"],
-    creator: "@Dinesh_Bankuru", // optional if you have Twitter
+    creator: "@Dinesh_Bankuru",
   },
 };
 
@@ -65,18 +160,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        > */}
+        {/* ✅ Microsoft Clarity Script */}
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "t3x612t1qf");
+            `,
+          }}
+        />
+
         <Navbar />
         {children}
         <Footer />
         <Toaster />
         <SpeedInsights />
-        {/* </ThemeProvider> */}
       </body>
     </html>
   );
