@@ -38,7 +38,7 @@ export default function AuthPage() {
       if (error) {
         toast.error(error.message)
       } else {
-        toast.success('Account created successfully!')
+        toast.success('Account created successfully! Check your email inbox to confirm your account.')
       }
     } catch (error) {
       toast.error('An error occurred during sign up')
